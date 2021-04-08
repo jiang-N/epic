@@ -37,7 +37,6 @@ const Component = () => {
   const history = useHistory()
 
   const onFinish = (values) => {
-    console.log('Success:', values)
     AuthStore.setUsername(values.username)
     AuthStore.setPassword(values.password)
     AuthStore.login().then(() => {

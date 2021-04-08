@@ -80,9 +80,8 @@ const Component = observer(() => {
           message.error('图片大于1M')
           return false
         }
-        ImageStore.upload().then(serverFile => {
+        ImageStore.upload().then(() => {
           console.log('上传成功')
-          console.log(serverFile)
         }).catch(() => {
           console.log('上传失败')
         })
