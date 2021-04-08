@@ -80,6 +80,7 @@
   "scripts": {
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
+    "upload": "cd build; git init; git add .; git commit -am \"init\"; git remote add origin git@github.com:jiang-N/epic-website.git; git push -f origin main",
     "test": "node scripts/test.js"
   },
   "eslintConfig": {
