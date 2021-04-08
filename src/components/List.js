@@ -26,7 +26,7 @@ const Component = observer(() => {
       console.log('卸载')
       HistoryStore.reset()
     }
-  }, [])
+  }, [HistoryStore])
 
   return (
     <InfiniteScroll initialLoad={true} pageStart={0} loadMore={loadMore}

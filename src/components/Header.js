@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useEffect} from 'react'
 import LogoUrl from '../logo.svg'
 import {NavLink, useHistory} from 'react-router-dom'
 import styled from 'styled-components'
@@ -37,11 +37,7 @@ const Component = observer(() => {
   const {UserStore, AuthStore} = useStores()
 
   const handleLogout = () => {
-    AuthStore.logout().then(() => {
-      console.log('注销成功')
-    }).catch(() => {
-      console.log('注销失败')
-    })
+    AuthStore.logout()
   }
 
   const handleLogin = () => {
@@ -53,6 +49,10 @@ const Component = observer(() => {
     console.log('跳转到注册页面')
     history.push('/register')
   }
+
+  useEffect(() => {
+    UserStore.pullUser()
+  })
 
   return (
     <Header>
