@@ -24,6 +24,7 @@ const Component = observer(() => {
 
     return () => {
       console.log('卸载')
+      HistoryStore.reset()
     }
   }, [])
 
